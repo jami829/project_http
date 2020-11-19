@@ -1,0 +1,84 @@
+.list-item {
+  padding: 1rem;
+  display: flex;
+  align-items: center; // 리스트들을 중앙 정렬(1열 종대 헤쳐모여)
+  &:nth-child(even) {
+    background: #f8f8fa; // 짝수번째(even) 리스트들에 대한 배경스타일
+  }
+
+  // 날짜
+  .stealth {
+    display: none;
+  }
+
+  // 중요 아이콘
+  .important-check {
+    cursor: pointer;
+    flex: 0.1;
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 1.5rem; // 중요 아이콘 크기 설정
+    }
+    &.important {
+      svg {
+        color: #ff0095; // 중요 표시되었을 때 색상스타일
+      }
+    }
+  }
+
+  // 완료 체크박스
+  .complete-check {
+    cursor: pointer;
+    flex: 0.6;
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 1.2rem;
+    }
+    .content {
+      margin-left: 0.5rem;
+      flex: 0.9;
+    }
+    &.complete {
+      svg {
+        color: #1d808f; // 완료 표시되었을 때 색상스타일
+      }
+      .content {
+        color: #7ba8a3;
+        text-decoration: line-through; // 완료 표시되었을 때 일정 취소선스타일
+      }
+    }
+  }
+
+  // 수정 아이콘
+  .edit {
+    cursor: pointer;
+    flex: 0.1;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #ffa66b;
+    cursor: pointer;
+    &:hover {
+      color: #ee4d25; // 수정 아이콘 hover 시 색상스타일
+    }
+  }
+
+  // 삭제 아이콘
+  .remove {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    cursor: pointer;
+    &:hover {
+      color: #ee2579; // 삭제 아이콘 hover 시 색상스타일
+    }
+  }
+
+  // 리스트 사이 구분선
+  & + & {
+    border-top: 1px solid #f2f2ff;
+  }
+}

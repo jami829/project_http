@@ -1,0 +1,28 @@
+.list-important-item {
+  padding: 1rem;
+  display: flex;
+  align-items: center; // 리스트들을 중앙 정렬(1열 종대 헤쳐모여)
+  &:nth-child(even) {
+    background: #f8f9fa; // 짝수번째(even) 리스트들에 대한 배경스타일
+  }
+
+  // 완료 체크박스
+  .complete-check-ofImportant {
+    flex: 0.8;
+    display: flex;
+    align-items: center;
+    svg {
+      font-size: 1.2rem;
+      color: #7c7c7c;
+    }
+    .content {
+      margin-left: 0.5rem;
+      flex: 0.9;
+    }
+  }
+
+  // 리스트 사이 구분선
+  & + & {
+    border-top: 1px solid #c2dffc;
+  }
+}
